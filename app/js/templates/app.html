@@ -8,7 +8,19 @@
     <div>
       <div id="sign-in-container"></div>
       <div id="signed-in-container">
-        <p>You're signed in!</p>
+        <ul class="nav nav-tabs" id="top-nav">
+          <li class="buttons">
+            <div class="btn-group">
+              <a href="#" class="btn" id="add-list-button"><i class="icon-plus">Add List</i></a>
+              <a href="#" class="btn" id="edit-list-button"><i class="icon-cog">Edit List</i></a>
+              <a href="#" class="btn delete-list" id="delete-list-button"><i class="icon-trash">Delete List</i></a>
+            </div>
+          </li>
+        </ul>
+        <div id="content-container">
+          <div id="list-editor"></div>
+          <div id="tasks-container"></div>
+        </div>
       </div>
     </div>
   </div>

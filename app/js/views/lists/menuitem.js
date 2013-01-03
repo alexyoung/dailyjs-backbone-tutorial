@@ -16,7 +16,6 @@ define(['text!templates/lists/menuitem.html'], function(template) {
 
     render: function() {
       var $el = $(this.el);
-      $el.data('listId', this.model.get('id'));
       $el.html(this.template(this.model.toJSON()));
       return this;
     },
