@@ -1,5 +1,5 @@
 requirejs.config({
-  baseUrl: 'js',
+  baseUrl: '/js',
 
   paths: {
     text: 'lib/text'
