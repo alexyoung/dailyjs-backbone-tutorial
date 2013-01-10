@@ -1,1 +1,2 @@
 #sign-in-container, #signed-in-container { display: none }
+li.active { font-weight: bold }

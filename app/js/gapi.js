@@ -78,6 +78,16 @@ define(['config'], function(config) {
     var requestContent = {};
     options || (options = {});
 
+    switch (model.url) {
+      case 'tasks':
+        requestContent.task = model.get('id');
+      break;
+
+      case 'tasklists':
+        requestContent.tasklist = model.get('id');
+      break;
+    }
+
     switch (method) {
       case 'create':
         requestContent['resource'] = model.toJSON();
@@ -86,6 +96,9 @@ define(['config'], function(config) {
       break;
 
       case 'update':
+        requestContent['resource'] = model.toJSON();
+        request = gapi.client.tasks[model.url].update(requestContent);
+        Backbone.gapiRequest(request, method, model, options);
       break;
 
       case 'delete':
