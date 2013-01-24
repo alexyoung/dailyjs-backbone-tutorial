@@ -1,2 +1,27 @@
+#main { padding-left: 0; height: 100% }
 #sign-in-container, #signed-in-container { display: none }
-li.active { font-weight: bold }
+h1 { margin: 0 0 10px 0; padding: 0; text-align: center }
+
+.main-left-col { height: 100%; position: fixed; padding-top: 10px; box-shadow: inset -1px 0 3px #000; overflow: auto; background-color: #999}
+
+.left-nav { list-style-type: none; margin: 0; padding: 0 }
+.left-nav li a { display: block; text-shadow: 1px 1px #000; color: #fff; padding: 10px; width: 100% }
+.left-nav li.active a { background-color: #fff; color: #333; text-shadow: none; font-weight: bold }
+.left-nav li a:hover { text-decoration: none; background-color: #fff; color: #333; text-shadow: none; font-weight: bold }
+
+.main-right-col { margin-left: 16.5%; margin-top: 10px }
+
+#top-nav { margin-bottom: 10px; padding-bottom: 10px }
+#list-editor { display: none; }
+
+#add-task form, .task { padding: 5px; margin: 0 0 5px 0 }
+#add-task input[name="title"] { width: 80% }
+
+#task-list { margin: 0; padding: 0; list-style-type: none }
+.task { vertical-align: middle }
+.task { padding: 8px; margin: 0 0 5px 0; }
+.task.active { border: 1px solid #049cdb }
+.task .notes { color: #888 }
+.task input { margin-right: 3px }
+
+.completed { text-decoration: line-through; }

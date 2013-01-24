@@ -125,7 +125,7 @@ define(['config'], function(config) {
         } else {
           result = res;
         }
-        options.success(result, true, request);
+        options.success(model, result, request);
       }
     });
   };
