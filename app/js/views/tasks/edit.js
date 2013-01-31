@@ -16,9 +16,7 @@ define(['text!templates/tasks/edit.html'], function(template) {
     },
 
     render: function() {
-      this.$el.data('taskId', this.model.get('id'));
       this.$el.html(this.template(this.model.toJSON()));
-      bTask.views.app.currentTask = this.model;
       return this;
     },
 
