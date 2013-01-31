@@ -81,6 +81,7 @@ define(['config'], function(config) {
     switch (model.url) {
       case 'tasks':
         requestContent.task = model.get('id');
+        requestContent.tasklist = model.get('tasklist');
       break;
 
       case 'tasklists':

@@ -9,11 +9,11 @@ define([
 
 function(ApiManager, AppView, AuthView, ListMenuView, TaskLists, Tasks) {
   var App = function() {
+    this.collections.lists = new TaskLists();
     this.views.app = new AppView();
     this.views.app.render();
     this.views.auth = new AuthView(this);
     this.views.auth.render();
-    this.collections.lists = new TaskLists();
     this.views.listMenu = new ListMenuView({ collection: this.collections.lists });
 
     this.connectGapi();
