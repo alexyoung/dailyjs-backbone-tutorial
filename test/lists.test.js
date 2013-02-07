@@ -10,17 +10,21 @@ suite('Lists', function() {
   });
 
   test('Creating a list', function() {
-    var $el = bTask.views.app.$el;
+    var $el = bTask.views.app.$el
+      , listName = 'Example list';
 
     // Show the add list form
     $el.find('#add-list-button').click();
 
     // Fill out a value for the new list's title
-    $el.find('#list_title').val('Example list');
+    $el.find('#list_title').val(listName);
     $el.find('#list_title').parents('form').first().submit();
 
     // Make sure the spy has seen a call for a list being created
     assert.equal(1, spyCreate.callCount);
+
+    // Ensure the expected UI element has been added
+    assert.equal(listName, $('.list-menu-item:last').text().trim());
   });
 
   test('Editing a list', function() {

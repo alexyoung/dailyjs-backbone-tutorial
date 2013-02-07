@@ -35,7 +35,6 @@ gapi.client = {
       insert: function() {
         return {
           execute: function(cb) {
-            // TODO: Running the callback causes addTask (app.js) to fail when running `self.collection.add(task, { at: 0 });`
           }
         };
       },
@@ -124,7 +123,13 @@ gapi.client = {
       insert: function() {
         return {
           execute: function(cb) {
-            // TODO: Running the callback causes addTask (app.js) to fail when running `self.collection.add(task, { at: 0 });`
+            // Used for the 'Creating a list' test
+            cb({
+              "id": "1",
+              "kind": "tasks#taskList",
+              "title": "Example list",
+              "updated": "2013-01-14T13:58:48.000Z"
+            });
           }
         };
       },
