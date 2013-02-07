@@ -75,7 +75,7 @@ define(['config'], function(config) {
   };
 
   Backbone.sync = function(method, model, options) {
-    var requestContent = {};
+    var requestContent = {}, request;
     options || (options = {});
 
     switch (model.url) {
