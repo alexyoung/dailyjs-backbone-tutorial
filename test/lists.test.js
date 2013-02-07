@@ -38,6 +38,7 @@ suite('Lists', function() {
     $el.find('#list_title').parents('form').first().submit();
 
     assert.equal(1, spyUpdate.callCount);
+    assert.equal('Edited list', $('.list-menu-item:first').text().trim());
   });
 
   test('Deleting a list', function() {
