@@ -1,12 +1,19 @@
 suite('Lists', function() {
-  var spyUpdate = sinon.spy(gapi.client.tasks.tasklists, 'update')
-    , spyCreate = sinon.spy(gapi.client.tasks.tasklists, 'insert')
-    , spyDelete = sinon.spy(gapi.client.tasks.tasklists, 'delete')
+  var spyUpdate
+    , spyCreate
+    , spyDelete
     ;
 
   setup(function() {
-    spyUpdate.reset();
-    spyCreate.reset();
+    spyUpdate = sinon.spy(gapi.client.tasks.tasklists, 'update')
+    spyCreate = sinon.spy(gapi.client.tasks.tasklists, 'insert')
+    spyDelete = sinon.spy(gapi.client.tasks.tasklists, 'delete')
+  });
+
+  teardown(function() {
+    gapi.client.tasks.tasklists.update.restore();
+    gapi.client.tasks.tasklists.insert.restore();
+    gapi.client.tasks.tasklists.delete.restore();
   });
 
   test('Creating a list', function() {

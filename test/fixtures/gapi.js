@@ -28,7 +28,7 @@ gapi.client = {
       delete: function() {
         return {
           execute: function(cb) {
-            cb();
+            cb({});
           }
         };
       },
