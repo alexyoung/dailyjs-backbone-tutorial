@@ -9,8 +9,9 @@
 , "devDependencies": {
     "mocha": "latest"
   , "chai": "latest"
-  , "grunt": "latest"
-  , "grunt-exec": "latest"
+  , "grunt": "0.4.x"
+  , "grunt-exec": "0.4.x"
+  , "grunt-cli": "0.1.x"
   }
 , "scripts": {
     "grunt": "node_modules/.bin/grunt"
