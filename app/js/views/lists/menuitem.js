@@ -12,6 +12,7 @@ define(['text!templates/lists/menuitem.html', 'views/tasks/index', 'collections/
     initialize: function() {
       this.model.on('change', this.render, this);
       this.model.on('destroy', this.remove, this);
+      this.model.on('select', this.open, this);
     },
 
     render: function() {
@@ -35,6 +36,8 @@ define(['text!templates/lists/menuitem.html', 'views/tasks/index', 'collections/
 
       bTask.views.tasksIndexView = new TasksIndexView({ collection: new Tasks({ tasklist: this.model.get('id') }), model: this.model });
       bTask.views.app.$el.find('#tasks-container').html(bTask.views.tasksIndexView.render().el);
+
+      bTask.routes.navigate('lists/' + this.model.get('id'));
 
       return false;
     }
