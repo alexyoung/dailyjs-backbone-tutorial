@@ -1,8 +1,15 @@
+body { height: 100%; background-image: url('../img/background-white.png'); font-family: 'pt sans', sans-serif; font-size: 90% }
+
 #main { padding-left: 0; height: 100% }
 #sign-in-container, #signed-in-container { display: none }
 h1 { margin: 0 0 10px 0; padding: 0; text-align: center }
 
-.main-left-col { height: 100%; position: fixed; padding-top: 10px; box-shadow: inset -1px 0 3px #000; overflow: auto; background-color: #999}
+.main-left-col { height: 100%; position: fixed; background-image: url('../img/background.png'); padding-top: 10px; box-shadow: inset -1px 0 3px black; overflow: auto }
+.main-left-col h1 { color: #000; text-shadow: 0 1px 0 rgba(255, 255, 255, .4), 0 0 15px rgba(255, 255, 255, .175); padding: 10px 10px 20px 0; text-align: center; font-family: playball, sans-serif; font-size: 48px }
+.main-left-col .left-nav > li > a { text-shadow: 1px 1px #000; color: #fff; padding: 10px; border-top: 1px solid rgba(255, 255, 255, .25); border-bottom: 1px solid rgba(0, 0, 0, .45); background-color: rgba(255, 255, 255, 0.15) }
+.main-left-col .left-nav > li.active > a { background-color: #fff; background-image: url('../img/background-white.png'); color: #333; text-shadow: none; font-weight: bold }
+.main-left-col .left-nav > li> a:hover { background-color: #f0f0f0; color: #000; text-shadow: 1px 1px #fff }
+.main-left-col .left-nav .nav-header { color: #fff }
 
 .left-nav { list-style-type: none; margin: 0; padding: 0 }
 .left-nav li a { display: block; text-shadow: 1px 1px #000; color: #fff; padding: 10px; width: 100% }
@@ -13,15 +20,37 @@ h1 { margin: 0 0 10px 0; padding: 0; text-align: center }
 
 #top-nav { margin-bottom: 10px; padding-bottom: 10px }
 #list-editor { display: none; }
+.edit-task .form-actions { margin: 20px 0 0 0; padding: 20px 0 0 0 }
 
 #add-task form, .task { padding: 5px; margin: 0 0 5px 0 }
 #add-task input[name="title"] { width: 80% }
 
 #task-list { margin: 0; padding: 0; list-style-type: none }
 .task { vertical-align: middle }
+.task:hover { cursor: pointer }
 .task { padding: 8px; margin: 0 0 5px 0; }
 .task.active { border: 1px solid #049cdb }
 .task .notes { color: #888 }
 .task input { margin-right: 3px }
 
 .completed { text-decoration: line-through; }
+
+@media (max-width: 570px) {
+  .hide-tiny { display: none }
+  .row-fluid .span6 { width: 100%; margin-left: 0 }
+}
+@media (max-width: 480px) {
+  .hide-tiny, #lists-panel { display: none }
+  .main-right-col { margin-left: 0 }
+}
+@media (max-width: 767px) {
+  #lists-panel { display: none }
+  .main-right-col { margin-left: 0 }
+}
+/* Show the task edit panel fixed, unless showing a single column or when the display area isn't high enough to show the whole form */
+@media (min-width: 767px) and (min-height: 500px) {
+  #selected-task {
+    position: fixed;
+    width: 40%;
+  }
+}
