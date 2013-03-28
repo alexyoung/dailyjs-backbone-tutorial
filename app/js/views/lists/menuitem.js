@@ -34,9 +34,10 @@ define(['text!templates/lists/menuitem.html', 'views/tasks/index', 'collections/
         bTask.views.tasksIndexView.remove();
       }
 
-      bTask.views.tasksIndexView = new TasksIndexView({ collection: new Tasks({ tasklist: this.model.get('id') }), model: this.model });
+      var tasks = new Tasks({ tasklist: this.model.get('id') });
+      bTask.collections.tasks = tasks;
+      bTask.views.tasksIndexView = new TasksIndexView({ collection: tasks, model: this.model });
       bTask.views.app.$el.find('#tasks-container').html(bTask.views.tasksIndexView.render().el);
-
       bTask.routes.navigate('lists/' + this.model.get('id'));
 
       return false;

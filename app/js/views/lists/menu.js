@@ -18,7 +18,7 @@ define(['views/lists/menuitem'], function(ListMenuItemView) {
       if (!bTask.views.activeListMenuItem) {
         bTask.views.activeListMenuItem = item;
       }
-      
+
       if (model.get('id') === bTask.views.activeListMenuItem.model.get('id')) {
         item.open();
       }
@@ -27,10 +27,6 @@ define(['views/lists/menuitem'], function(ListMenuItemView) {
     render: function() {
       var $el = $(this.el)
         , self = this;
-
-      this.collection.each(function(list) {
-        self.renderMenuItem(list);
-      });
 
       return this;
     }
