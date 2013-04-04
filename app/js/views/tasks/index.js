@@ -14,6 +14,24 @@ define(['text!templates/tasks/index.html', 'views/tasks/task', 'views/tasks/edit
       this.collection.on('add', this.renderTask, this);
     },
 
+    makeSortable: function() {
+      var $el = this.$el.find('#task-list');
+      if (this.collection.length) {
+        $el.sortable('destroy');
+        $el.sortable({ handle: '.handle' }).bind('sortupdate', _.bind(this.saveTaskOrder, this));
+      }
+    },
+
+    saveTaskOrder: function(e, o) {
+      var id = $(o.item).find('.check-task').data('taskId')
+        , previous = $(o.item).prev()
+        , previousId = previous.length ? $(previous).find('.check-task').data('taskId') : null
+        , request
+        ;
+
+      this.collection.move(id, previousId, this.model);
+    },
+
     addTask: function() {
       var $input = this.$el.find('input[name="title"]')
         , task = new this.collection.model({ tasklist: this.model.get('id') })
@@ -57,6 +75,8 @@ define(['text!templates/tasks/index.html', 'views/tasks/task', 'views/tasks/edit
           task.set('tasklist', self.model.get('id'));
           self.renderTask(task);
         });
+
+        self.makeSortable();
       }});
 
       return this;

@@ -14,7 +14,7 @@ requirejs.config({
     , exports: 'Backbone'
     },
     'app': {
-      deps: ['lib/underscore-min', 'lib/backbone']
+      deps: ['lib/underscore-min', 'lib/backbone', 'lib/jquery.sortable']
     }
   }
 });

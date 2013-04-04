@@ -35,6 +35,8 @@ h1 { margin: 0 0 10px 0; padding: 0; text-align: center }
 
 .completed { text-decoration: line-through; }
 
+li.sortable-placeholder { border: 1px dashed #CCC; background: none; height: 28px; margin: 5px 0 }
+
 @media (max-width: 570px) {
   .hide-tiny { display: none }
   .row-fluid .span6 { width: 100%; margin-left: 0 }
