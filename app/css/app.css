@@ -28,7 +28,7 @@ h1 { margin: 0 0 10px 0; padding: 0; text-align: center }
 #task-list { margin: 0; padding: 0; list-style-type: none }
 .task { vertical-align: middle }
 .task:hover { cursor: pointer }
-.task { padding: 8px; margin: 0 0 5px 0; }
+.task { padding: 8px; margin: 0 0 5px 0; word-wrap: break-word; }
 .task.active { border: 1px solid #049cdb }
 .task .notes { color: #888 }
 .task input { margin-right: 3px }
